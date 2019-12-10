@@ -144,6 +144,10 @@ textarea.form-control {
     border-bottom: 20px solid transparent;
 }
 
+.blocks .tm-content-box:before {
+    display: none;
+}
+
 @keyframes move_in {
     0% {
         transform: translateX(200px);
