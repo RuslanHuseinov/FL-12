@@ -1,0 +1,96 @@
+// Write your styles here
+@import "variables1";
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.section {
+    text-align: center;
+    position: relative;
+    padding-bottom: 150px;
+
+    .section_text {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .section_card {
+        display:flex;
+        flex-direction: row;
+        max-width: 50%;
+        margin:auto;
+        padding:15px;
+        margin-bottom: 20px;
+        color: white;
+
+        .section_card_text {
+            text-align: justify;
+        }
+        
+        .section_card_right_container {
+            padding: 20px 45px;
+            a{
+                color: white;
+            }
+        }
+    }
+
+    .section_banner {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width:800px;
+        transform: translate(-50%, 50%);
+        border-radius: 4px;
+        background: linear-gradient(to right, rgb(100,148,18), rgb(44,90,219));
+        
+    }
+}
+.section_card_heading {
+    font-weight: bold;
+}
+.header {
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 1170px;
+    background: $header-background-img no-repeat center center;
+    background-size: 100% 155%;
+    border-radius: 0 0 50% 0;
+    padding: 0px 100px 100px;
+
+    .header-wrap{
+        max-width: 45%;
+
+        .header_heading {
+            font-size: 45px;
+            font-weight: 900;
+            line-height: 1;
+        }
+    }
+}
+
+.footer-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 1170px;
+    min-height:150px;
+    margin: auto;
+    color: white;
+    img {
+        margin: 70px 0 20px 70px;
+    }
+}
+div .section_card,.footer-wrap {
+    background-color:$background-color;
+    }   
+
+.landing-logo {
+    display: flex;
+    align-items: center;
+
+    p {
+         span {
+            display: block;
+            
+        }
+    }
+}
