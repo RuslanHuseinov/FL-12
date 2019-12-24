@@ -1,0 +1,245 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+/* :root {
+  --bg-color--dark: #0b192f;
+  --bg-color--header: #024161;
+  --link: #fff;
+  --link--hover: #1f52a4;
+  --bg-footer-color: #024161;
+}
+
+
+
+body {
+  font-family: roboto;
+}
+.post-1 {
+	background: #9d27b0;
+}
+.post-2 {
+	background: #9bb800;
+}
+.post-3 {
+	background: #ed5120;
+}
+.post-4 {
+	background: #9d27b0;
+}
+.post-5 {
+	background: #2d95bb;
+} */
+
+/* Your styles go here */
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  color: white;
+  background: #0b192f;
+  font-family: roboto;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.post_1_text { grid-area: text1; }
+.post_2_text { grid-area: text2; }
+.post_3_text { grid-area: text3; }
+.post_4_text { grid-area: text4; }
+.post_5_text { grid-area: text5; }
+.post_1_img { grid-area: img1; }
+.post_2_img { grid-area: img2; }
+.post_3_img { grid-area: img3; }
+.post_4_img { grid-area: img4; }
+.news_1_text { grid-area: text6; }
+.news_2_text { grid-area: text7; }
+.news_1_img { grid-area: img5; }
+.news_2_img { grid-area: img6; }
+
+.post_0_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.post_0_text div {
+  height: 200px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.post_0_text h1 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+
+.post_1_text {
+  background-color: #9d27b0;
+}
+
+.post_2_text {
+  background-color: #a4be18;
+}
+
+.post_3_text {
+  background-color: #ed5120;
+}
+
+.post_4_text {
+  background-color: #9d27b0;
+}
+
+.post_5_text {
+  background-color: #2d95bb;
+}
+
+footer {
+  background-color: #034161;
+}
+
+.news_1_text, .news_2_text {
+  padding: 0 15px;
+}
+
+img {
+  width: 100%;
+}
+
+
+.post h1 {
+  font-size: 25px;
+}
+
+.post {
+  padding: 10px 10px;
+}
+.post div{
+  padding: 20px;
+}
+.grid {
+  display: grid;
+  grid-template-areas:
+  'img1 img1 text1 text1 text6'
+  'text2 text2 img2 img2 text6'
+  'img3 img3 text3 text3 text7'
+  'text4 text4 img4 img4 text7'
+  'text5 text5 text5 text5 .';
+
+  background-color: #2196F3;
+}
+.news_text {
+  color: black;
+  padding: 10px;
+}
+.news_text div{
+  background: white;
+  background-size:100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .grid {
+    grid-template-areas:
+    'img1'
+    'text1'
+    'img2'
+    'text2'
+    'img3'
+    'text3'
+    'img4'
+    'text4'
+    'text5'
+    'text6'
+    'text7'
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #024161;
+  padding: 10px 20px;
+}
+
+header {
+  min-height: 200px;
+  background: url("../img/post0.jpg");
+  background-size: 100%;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.navigation h1 {
+  font-size: 30px;
+}
+
+.navigation h1 span {
+  color: red;
+}
+
+nav{
+  margin-right: 40px;
+}
+nav span {
+  color:#9d27b0 ;
+}
+nav a{
+  margin-right: 25px;
+  text-decoration: none;
+  color:#fff;
+  }
+nav a:hover{
+  color:#1f52a4 ;
+}
+.main,header,footer{
+  margin: auto;
+  max-width: 1400px;
+}
