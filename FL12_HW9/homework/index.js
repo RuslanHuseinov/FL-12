@@ -1,6 +1,8 @@
+const oneday = 1000 * 60 * 60 * 24;
+
 // task1 done
-let result = [];
 function convert(...last) {
+    let result = [];
     for (let i of last) {
         if (typeof i === 'string') {
             result.push(Number(i));
@@ -8,85 +10,100 @@ function convert(...last) {
             result.push(String(i));
         }
     }
+
+    return result;
 }
-convert('1', 2, 3, '4');
+
 // task2 done
-function executeforEach(array, func) {
-    array.forEach(element => func(element));
+function executeforEach(array, func, includePredicate = () => true) {
+    return array.reduce((acc, val, i, arr) => {
+        let temp = func(val);
+        if (temp && includePredicate(val)) {
+            acc.push(temp);
+        }
+
+        return acc;
+    }, []);
 }
 executeforEach([1, 2, 3], function (element) {
     console.log(element * 2);
 });
+
 // task3 done
 function mapArray(array, func) {
-    array.forEach(element => func(element));
+    return executeforEach(array, func);
 }
 mapArray([2, '5', 8], function (element) {
     if (typeof element === 'string') {
-        return result.push(Number(element) + 3);
+        return Number(element) + 3;
     }
-    return result.push(element + 3);
+    return element + 3;
 });
+
 // task4 done
 function filterArray(array, func) {
-    array.forEach(element => {
-        if (func(element)){
-            return result.push(element);
-        }
-    });
+    return executeforEach(array, (v) => v, func);
 }
+
 filterArray([2, 5, 8], function (element) {
     return element % 2 === 0;
 });
+
 // task5 done
 function flipOver(str) {
-    let flipped = '';
-    for (let i = str.length - 1; i >= 0; i--) {
-        flipped = +str[i];
-    }
-    return flipped;
+    return str.split('').reverse().join('');
 }
+
 // task6 done
 function makeListFromRange(range){
-    for (let i = range[0]; i<=range[1]; i++){
+    let result = [];
+
+    for (let i = range[0]; i <= range[1]; i++){
          result.push(i);
     }
+
+    return result;
 }
 makeListFromRange([2, 7]);
+
 // task 7 
 const actors = [
     { name: 'tommy', age: 36 },
     { name: 'lee', age: 28 }
 ];
 function getArrayOfKeys(array, key) {
+    let result = [];
+
     executeforEach(array, element => {
         return result.push(element[key]);
     });
     return result;
 }
 getArrayOfKeys(actors, 'name');
+
 // task8 done
-function substitute(array, func) {
-    array.forEach(element => func(element));
-    console.log(result);
+function substitute(array) {
+    return mapArray(array, function (element) {
+        if (element < 30) {
+            return '*';
+        }
+        return element;
+    });
 }
-substitute([58, 14, 48, 2, 31, 29], function (element) {
-    if (element < 30) {
-        return result.push('*');
-    }
-    return result.push(element);
-});
+substitute([58, 14, 48, 2, 31, 29]);
+
 // task9 done
 const date = new Date(2019, 0, 2);
 function getPastDay(date, day) {
-    let oneday=1000 * 60 * 60 * 24;
     let difference = date.getTime() - day * oneday;
     difference = new Date(difference);
-    return console.log(`number of days ago = ${difference.getDate()} day = ${difference}`);
+    return `number of days ago = ${difference.getDate()} day = ${difference}`;
 }
+
 getPastDay(date, 1); 
 getPastDay(date, 2); 
-getPastDay(date, 365); 
+getPastDay(date, 365);
+
 // task10 done
 function formatDate(newdate) {
     let year = newdate.getFullYear();
@@ -94,7 +111,7 @@ function formatDate(newdate) {
     let day = newdate.getDate();
     let hour = newdate.getHours();
     let minutes = newdate.getMinutes();
-    return console.log(`${year}/${month}/${day} ${hour}:${minutes}`);
+    return `${year}/${month}/${day} ${hour}:${minutes}`;
 }
-formatDate(new Date('6/15/2018 09:15:00')) 
-formatDate(new Date()) 
+formatDate(new Date('6/15/2018 09:15:00'));
+formatDate(new Date());
