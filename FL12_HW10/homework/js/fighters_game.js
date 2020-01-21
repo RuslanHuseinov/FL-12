@@ -1,5 +1,5 @@
 class Fighter {
-    constructor(name, damage, strength, agility, hp,) {
+    constructor(name, damage, strength, agility, hp) {
         Object.assign(this, { name, damage, strength, agility, hp })
         this.wins = 0;
         this.losses = 0;
