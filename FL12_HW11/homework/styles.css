@@ -1,0 +1,11 @@
+/* Todo: your styles go here*/
+.hidden {
+    display: none;
+}
+div div {
+    margin-left: 10px ;
+}
+h3:hover{
+    cursor: pointer;
+    background-color: #bbbbbb;
+}
